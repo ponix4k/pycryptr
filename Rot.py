@@ -1,9 +1,12 @@
 #!/usr/bin/python3
 
+#This is a simple Rotatonal Encoder/Decoder that will shift letters around based on the value given
+
 #CharTypes
 Alpha_Low = ('abcdefghijklmnopqrstuvwxyz') #set up array of lowercase characters
 Alpha_Up  = ('ABCDEFGHIJKLMNOPQRSTUVWXYZ') #set up array of uppercase characters
 
+#Message
 newMessage = ''
 message = input('Please enter a message to encode/decode: ') #request message from user
 Rot = input('Please Enter Rotation (0 for all) : ') #request rotation amount e.g rot 2 a = c
