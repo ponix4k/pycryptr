@@ -15,13 +15,14 @@ def encrypt(message):
 	cipher = ''
 	for letter in message:
 		if(letter != ' '):  #Check message array for a space
-			cipher += Dict[letter]  #
+			cipher += Dict[letter]  # find the letter in the dictionary
 		else:
 			cipher += ' ' # add a space
 	return cipher
 
 #Message
-
+print('V.01a')
+print('This Version currently only accepts All caps messages')
 message = input('Please enter a message to encode: ') #request message from user
 
 # Function to decrypt the string
