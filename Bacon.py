@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-#This is a simple Bacon Encoder/Decoder that will Encode/Decode useing the bacon cipher
+#This is a simple Bacon Encoder/Decoder that will Encode/Decode using the bacon cipher
 
 #Character Setup
 Dict = {'A' : 'AAAAA','B' : 'AAAAB','C' : 'AAABA','D' : 'AAABB','E' : 'AABAA',
@@ -13,13 +13,15 @@ Dict = {'A' : 'AAAAA','B' : 'AAAAB','C' : 'AAABA','D' : 'AAABB','E' : 'AABAA',
 	'j' : 'AVAAB','k' : 'ABABA','l' : 'ABABB','m' : 'ABBAA','n' : 'ABBAB',
 	'o' : 'ABBBA','p' : 'ABBBB','q' : 'BAAAA','r' : 'BAAAB','s' : 'BAABA',
 	't' : 'BAABB','u' : 'BABAA','v' : 'BABAB','w' : 'BABBA','x' : 'BABBB',
-	'y' : 'BBAAA','z' : 'BBAAB'}
+	'y' : 'BBAAA','z' : 'BBAAB','1' : '1','2' : '2','3' : '3','4' : '4',
+	'5' : '5','6' : '6','7' : '7','8' : '8','9' : '9','0' : '0'
+	}
 
 
-print('V0.01b')
-print('This Version currently only accepts All caps messages')
-print('Do you want to encode or decode a messages')
-enc = input(' 0 = encode 1 = decode: ')
+print('V1.01')
+print('This Version will accept numbers and both uppercase and lowercase letters')
+print('Do you want to encode or decode a messages ?')
+enc = input('Please make your selection (0 = encode 1 = decode): ')
 encvar = int(enc)
 
 #Message
