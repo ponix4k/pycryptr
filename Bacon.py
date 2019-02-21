@@ -8,10 +8,15 @@ Dict = {'A' : 'AAAAA','B' : 'AAAAB','C' : 'AAABA','D' : 'AAABB','E' : 'AABAA',
 	'K' : 'ABABA','L' : 'ABABB','M' : 'ABBAA','N' : 'ABBAB','O' : 'ABBBA',
 	'P' : 'ABBBB','Q' : 'BAAAA','R' : 'BAAAB','S' : 'BAABA','T' : 'BAABB',
 	'U' : 'BABAA','V' : 'BABAB','W' : 'BABBA','X' : 'BABBB','Y' : 'BBAAA',
-	'Z' : 'BBAAB'}
+	'Z' : 'BBAAB','a' : 'AAAAA','b' : 'AAAAB','c' : 'AAABA','d' : 'AAABB',
+	'e' : 'AABAA','f' : 'AABAB','g' : 'AABBA','h' : 'AABBB','i' : 'ABAAA',
+	'j' : 'AVAAB','k' : 'ABABA','l' : 'ABABB','m' : 'ABBAA','n' : 'ABBAB',
+	'o' : 'ABBBA','p' : 'ABBBB','q' : 'BAAAA','r' : 'BAAAB','s' : 'BAABA',
+	't' : 'BAABB','u' : 'BABAA','v' : 'BABAB','w' : 'BABBA','x' : 'BABBB',
+	'y' : 'BBAAA','z' : 'BBAAB'}
 
 
-print('V.01a')
+print('V0.01b')
 print('This Version currently only accepts All caps messages')
 print('Do you want to encode or decode a messages')
 enc = input(' 0 = encode 1 = decode: ')
