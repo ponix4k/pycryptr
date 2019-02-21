@@ -14,7 +14,12 @@ Dict = {'A' : 'AAAAA','B' : 'AAAAB','C' : 'AAABA','D' : 'AAABB','E' : 'AABAA',
 print('V.01a')
 print('This Version currently only accepts All caps messages')
 print('Do you want to encode or decode a messages')
-encvar = input(' 0 = encode 1 = decode: ')
+enc = input(' 0 = encode 1 = decode: ')
+encvar = int(enc)
+
+#Message
+
+message = input('Please enter a message to encode: ') #request message from user
 
 #function To Encode into the bacon cipher
 def encrypt(message):
@@ -26,9 +31,6 @@ def encrypt(message):
 			cipher += ' '
 	return cipher
 
-	#Message
-
-	message = input('Please enter a message to encode: ') #request message from user
 
 	# Function to decrypt the string
 	# according to the cipher provided
@@ -64,11 +66,12 @@ def decrypt(message):
     return decipher
 
 def main():
-if encvar = 1
-    result = decrypt(message.upper())
-else
-	result = encrypt(message.upper())
-print (result)
+	if encvar > 0:
+		result = decrypt(message.upper())
+		print (result)
+	else:
+		result = encrypt(message.upper())
+		print (result)
 
 if __name__ == '__main__':
     main()
