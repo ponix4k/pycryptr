@@ -3,19 +3,29 @@
 #This is a simple Bacon Encoder/Decoder that will Encode/Decode using the bacon cipher
 
 #Character Setup
-Dict = {'A' : 'AAAAA','B' : 'AAAAB','C' : 'AAABA','D' : 'AAABB','E' : 'AABAA',
-	'F' : 'AABAB','G' : 'AABBA','H' : 'AABBB','I' : 'ABAAA','J' : 'AVAAB',
-	'K' : 'ABABA','L' : 'ABABB','M' : 'ABBAA','N' : 'ABBAB','O' : 'ABBBA',
-	'P' : 'ABBBB','Q' : 'BAAAA','R' : 'BAAAB','S' : 'BAABA','T' : 'BAABB',
-	'U' : 'BABAA','V' : 'BABAB','W' : 'BABBA','X' : 'BABBB','Y' : 'BBAAA',
-	'Z' : 'BBAAB','a' : 'AAAAA','b' : 'AAAAB','c' : 'AAABA','d' : 'AAABB',
-	'e' : 'AABAA','f' : 'AABAB','g' : 'AABBA','h' : 'AABBB','i' : 'ABAAA',
-	'j' : 'AVAAB','k' : 'ABABA','l' : 'ABABB','m' : 'ABBAA','n' : 'ABBAB',
-	'o' : 'ABBBA','p' : 'ABBBB','q' : 'BAAAA','r' : 'BAAAB','s' : 'BAABA',
-	't' : 'BAABB','u' : 'BABAA','v' : 'BABAB','w' : 'BABBA','x' : 'BABBB',
-	'y' : 'BBAAA','z' : 'BBAAB','1' : '1','2' : '2','3' : '3','4' : '4',
-	'5' : '5','6' : '6','7' : '7','8' : '8','9' : '9','0' : '0'
-	}
+Dict24 = {'a' : 'aaaaa','b' : 'aaaab','c' : 'aaaba','d' : 'aaabb','e' : 'aabaa',
+'f' : 'aabab','g' : 'aabba','h' : 'aabbb','i' : 'abaaa','j' : 'abaaa','k' : 'abaab',
+'l' : 'ababa','m' : 'ababb','n' : 'abbaa','o' : 'abbab','p' : 'abbba','q' : 'abbbb',
+'r' : 'baaaa','s' : 'baaab','t' : 'baaba','u' : 'baabb','v' : 'baabb','w' : 'babaa',
+'x' : 'babab','y' : 'babba','z' : 'babbb','A' : 'AAAAA','B' : 'AAAAB','C' : 'AAABA',
+'D' : 'AAABB','E' : 'AABAA','F' : 'AABAB','G' : 'AABBA','H' : 'AABBB','I' : 'ABAAA',
+'J' : 'ABAAA','K' : 'ABAAB','L' : 'ABABA','M' : 'ABABB','N' : 'ABBAA','O' : 'ABBAB',
+'P' : 'ABBBA','Q' : 'ABBBB','R' : 'BAAAA','S' : 'BAAAB','T' : 'BAABA','U' : 'BAABB',
+'V' : 'BAABB','W' : 'BABAA','X' : 'BABAB','Y' : 'BABBA','Z' : 'BABBB'}
+
+#Dict26 = {'A' : 'AAAAA','B' : 'AAAAB','C' : 'AAABA','D' : 'AAABB','E' : 'AABAA',
+#	'F' : 'AABAB','G' : 'AABBA','H' : 'AABBB','I' : 'ABAAA','J' : 'AVAAB',
+#	'K' : 'ABABA','L' : 'ABABB','M' : 'ABBAA','N' : 'ABBAB','O' : 'ABBBA',
+#	'P' : 'ABBBB','Q' : 'BAAAA','R' : 'BAAAB','S' : 'BAABA','T' : 'BAABB',
+#	'U' : 'BABAA','V' : 'BABAB','W' : 'BABBA','X' : 'BABBB','Y' : 'BBAAA',
+#	'Z' : 'BBAAB','a' : 'AAAAA','b' : 'AAAAB','c' : 'AAABA','d' : 'AAABB',
+#	'e' : 'AABAA','f' : 'AABAB','g' : 'AABBA','h' : 'AABBB','i' : 'ABAAA',
+#	'j' : 'AVAAB','k' : 'ABABA','l' : 'ABABB','m' : 'ABBAA','n' : 'ABBAB',
+#	'o' : 'ABBBA','p' : 'ABBBB','q' : 'BAAAA','r' : 'BAAAB','s' : 'BAABA',
+#	't' : 'BAABB','u' : 'BABAA','v' : 'BABAB','w' : 'BABBA','x' : 'BABBB',
+#	'y' : 'BBAAA','z' : 'BBAAB','1' : '1','2' : '2','3' : '3','4' : '4',
+#	'5' : '5','6' : '6','7' : '7','8' : '8','9' : '9','0' : '0'
+#	}
 
 
 print('V1.01')
@@ -33,7 +43,7 @@ def encrypt(message):
 	cipher = ''
 	for letter in message:
 		if(letter != ' '):  #Check message array for a space
-			cipher += Dict[letter]  # find the letter in the dictionary
+			cipher += Dict24[letter]  # find the letter in the dictionary
 		else:
 			cipher += ' '
 	return cipher
@@ -61,7 +71,7 @@ def decrypt(message):
                 This statement gets us the key(plaintext) using the values(ciphertext)
                 Just the reverse of what we were doing in encrypt function
                 '''
-                decipher += list(Dict.keys())[list(Dict.values()).index(substr)]
+                decipher += list(Dict24.keys())[list(Dict24.values()).index(substr)]
                 i += 5 # to get the next set of ciphertext
 
             else:
@@ -81,4 +91,4 @@ def main():
 		print ('Encode message is: ',result)
 
 if __name__ == '__main__':
-    main()
+	main()
