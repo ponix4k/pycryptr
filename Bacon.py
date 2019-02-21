@@ -68,10 +68,10 @@ def decrypt(message):
 def main():
 	if encvar > 0:
 		result = decrypt(message.upper())
-		print (result)
+		print ('Decoded message is: ',result)
 	else:
 		result = encrypt(message.upper())
-		print (result)
+		print ('Encode message is: ',result)
 
 if __name__ == '__main__':
     main()
