@@ -19,7 +19,7 @@ encvar = int(enc)
 
 #Message
 
-message = input('Please enter a message to encode: ') #request message from user
+message = input('Please enter a message to Encode/Decode: ') #request message from user
 
 #function To Encode into the bacon cipher
 def encrypt(message):
