@@ -10,7 +10,7 @@ Alpha_Up  = ('ABCDEFGHIJKLMNOPQRSTUVWXYZ') #set up array of uppercase characters
 newMessage = ''
 message = input('Please enter a message to encode/decode: ') #request message from user
 Rot = input('Please Enter Rotation (0 for all) : ') #request rotation amount e.g rot 2 a = c
-
+RotVal = int(Rot)
 #Lowercase Search
 for Char in message:
  if Char in Alpha_Low:
