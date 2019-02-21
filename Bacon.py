@@ -10,6 +10,17 @@ Dict = {'A' : 'AAAAA','B' : 'AAAAB','C' : 'AAABA','D' : 'AAABB','E' : 'AABAA',
 	'U' : 'BABAA','V' : 'BABAB','W' : 'BABBA','X' : 'BABBB','Y' : 'BBAAA',
 	'Z' : 'BBAAB'}
 
+
+print('V.01a')
+print('This Version currently only accepts All caps messages')
+print('Do you want to encode or decode a messages')
+enc = input(' 0 = encode 1 = decode: ')
+encvar = int(enc)
+
+#Message
+
+message = input('Please enter a message to Encode/Decode: ') #request message from user
+
 #function To Encode into the bacon cipher
 def encrypt(message):
 	cipher = ''
@@ -17,16 +28,13 @@ def encrypt(message):
 		if(letter != ' '):  #Check message array for a space
 			cipher += Dict[letter]  # find the letter in the dictionary
 		else:
-			cipher += ' ' # add a space
+			cipher += ' '
 	return cipher
 
-#Message
-print('V.01a')
-print('This Version currently only accepts All caps messages')
-message = input('Please enter a message to encode: ') #request message from user
 
-# Function to decrypt the string
-# according to the cipher provided
+	# Function to decrypt the string
+	# according to the cipher provided
+
 def decrypt(message):
     decipher = ''
     i = 0
@@ -50,7 +58,6 @@ def decrypt(message):
                 i += 5 # to get the next set of ciphertext
 
             else:
-                # adds space
                 decipher += ' '
                 i += 1 # index next to the space
         else:
@@ -59,9 +66,12 @@ def decrypt(message):
     return decipher
 
 def main():
-
-    result = encrypt(message.upper())
-    print (result)
+	if encvar > 0:
+		result = decrypt(message.upper())
+		print (result)
+	else:
+		result = encrypt(message.upper())
+		print (result)
 
 if __name__ == '__main__':
     main()
