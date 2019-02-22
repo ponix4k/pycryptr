@@ -30,9 +30,9 @@ Dict26 = {'A' : 'AAAAA','B' : 'AAAAB','C' : 'AAABA','D' : 'AAABB','E' : 'AABAA',
 	}
 
 
-print('V1.20')
+print('V1.50')
 print('This Version will accept numbers and both uppercase and lowercase letters and has 24 and 26 character options')
-charset =input('Select charset (0 = 24char , 1 = 26char): ')
+charset =input('Select charset (0 = 24 chars , 1 = 26 chars): ')
 charsetVar = int(charset)
 print('Do you want to encode or decode a messages ?')
 enc = input('Please make your selection (0 = encode 1 = decode): ')
