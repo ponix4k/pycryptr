@@ -1,10 +1,9 @@
-#!/usr/bin/python3
 from PIL import Image
 import binascii
 import optparse
 
 def rgb2hex(r,g,b):
-	return '#{:02x}{:02x}{:02x}'.format(r,g,bs)
+	return '#{:02x}{:02x}{:02x}'.format(r,g,b)
 
 def hex2rgb(hexcode):
 	return tuple(map(ord, hexcode[1:].decode('hex')))
