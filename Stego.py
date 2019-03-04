@@ -36,7 +36,7 @@ def hide(filename, message):
     img = Image.open(filename)
     binary = str2bin(message) + '1111111111111110'
     if img.mode in('RGBA'):
-        img = Image.convert('RGBA')
+        img = img.convert('RGBA')
         datas = img.getdata()
 
         newData=[]
@@ -60,7 +60,7 @@ def hide(filename, message):
 
 ######retrive######
 def retr(filename):
-    img = image.open(filename)
+    img = Image.open(filename)
     binary = ''
 
     if img.mode in ('RGBA'):
