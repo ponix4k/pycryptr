@@ -10,7 +10,7 @@ def rgb2hex(r, g, b):
 def hex2rgb(hexcode):
     return tuple(map(ord, hexcode[1:].decode('hex')))
 
-def str2bin(messgae):
+def str2bin(message):
     binary = bin(int(binascii.hexlify(message), 16))
     return binary[2:]
 
@@ -67,7 +67,7 @@ def retr(filename):
         img = img.convert('RGBA')
         datas = img.getdata()
         
-        for items in datas:
+        for item in datas:
             digit = decode(rgb2hex(item[0], item[1], item[2]))
             if digit == None:
                 pass
