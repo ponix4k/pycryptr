@@ -28,15 +28,23 @@ Dict26 = {'A' : 'AAAAA','B' : 'AAAAB','C' : 'AAABA','D' : 'AAABB','E' : 'AABAA',
 	'y' : 'BBAAA','z' : 'BBAAB','1' : '1','2' : '2','3' : '3','4' : '4',
 	'5' : '5','6' : '6','7' : '7','8' : '8','9' : '9','0' : '0'
 	}
+HTB = {'A' : 'AAAAA','B' : 'AAAAB','C' : 'AAANA','D' : 'AAANN','E' : 'AANAA',
+       'F' : 'AANAN','G' : 'AANNA','H' : 'AANNN','I' : 'ANAAA','J' : 'ANAAA',
+       'K' : 'ANAAN','L' : 'ANANA','M' : 'ANANN','N' : 'ANNAA','O' : 'ANNAN',
+       'P' : 'ANNNA','Q' : 'ANNNN','R' : 'NAAAA','S' : 'NAAAN','T' : 'NAANA',
+       'U' : 'NAANN','V' : 'NAANN','W' : 'NANAA','X' : 'NANAN','Y' : 'NANNA',
+       'Z' : 'NANNN','1' : '1','2' : '2','3' : '3','4' : '4','5' : '5',
+       '6' : '6','7' : '7','8' : '8','9' : '9','0' : '0'}
 
 
-print('V1.50')
+
+print('V1.60')
 print('This Version will accept numbers and both uppercase and lowercase letters and has 24 and 26 character options')
-charset =input('Select charset (0 = 24 chars , 1 = 26 chars): ')
+charset =input('Select charset (0 = 24 chars , 1 = 26 chars , 2 = HTB): ')
 charsetVar = int(charset)
 print('Do you want to encode or decode a messages ?')
 enc = input('Please make your selection (0 = encode 1 = decode): ')
-encvar = int(enc)
+encVar = int(enc)
 
 #Message
 
@@ -49,8 +57,10 @@ def encrypt(message):
         if(letter != ' '):  #Check message array for a space
             if charsetVar > 0:
                  cipher += Dict26[letter]  # find the letter in the dictionary
+            elif charsetVar > 1:
+                cipher += HTB[letter]  # find the letter in the dictionary
             else:
-                cipher += Dict24[letter]  # find the letter in the dictionary
+                cipher += Dict24[letter] #
         else:
             cipher += ' '
     return cipher
@@ -88,7 +98,7 @@ def decrypt(message):
     return decipher
 
 def main():
-    if encvar > 0:
+    if encVar > 0:
         result = decrypt(message.upper())
         print ('Decoded message is: ',result)
     else:

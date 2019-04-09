@@ -34,7 +34,9 @@ def decode(hexcode):
 ######hide#####
 def hide(filename, message):
     img = Image.open(filename)
+
     binary = str2bin(message) + '1111111111111110'
+
     if img.mode in('RGBA'):
         img = img.convert('RGBA')
         datas = img.getdata()
@@ -42,8 +44,9 @@ def hide(filename, message):
         newData=[]
         digit= 0
         temp = ''
+
         for item in datas:
-            if (digit < len(binary)):
+            if digit < len(binary):
                 newpix = encode(rgb2hex(item[0], item[1], item[2]),binary[digit])
                 if newpix == None:
                     newData.append(item)
@@ -53,15 +56,17 @@ def hide(filename, message):
                     digit += 1
             else:
                 newData.append(item)
+
         img.putData(newData)
         img.save(filename, "PNG")
+
         return "Completed"
     return "Incorrect image mode, couldnt hide a message"
 
 ######retrive######
 def retr(filename):
     img = Image.open(filename)
-    binary = ''
+    binary = ""
 
     if img.mode in ('RGBA'):
         img = img.convert('RGBA')
@@ -69,6 +74,7 @@ def retr(filename):
         
         for item in datas:
             digit = decode(rgb2hex(item[0], item[1], item[2]))
+            
             if digit == None:
                 pass
             else:
