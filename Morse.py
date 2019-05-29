@@ -7,9 +7,6 @@ DICT_Morse = {'A':'.-','B':'-...','C':'-.-.','D':'-..','E':'.','F':'..-.','G':'-
               '7':'--...','8':'---..','9':'----.','0':'-----',',':'--..--',
               '.':'.-.-.-','?':'..--..','/':'-..-.','-':'-....-','(':'-.--.',')':'-.--.-'}
 
-# Function to encrypt the string
-# according to the morse code chart
-
 enc = input('Please make your selection (0 = encode 1 = decode): ')
 encVar = int(enc)
 
@@ -20,17 +17,15 @@ def encrypt(message):
         if letter != ' ':
             cipher += DICT_Morse[letter] + ' '
         else:
-            cipher += ' '
+            cipher += '/'
     return cipher
 
 def decrypt(message):
-
-    message += ' '
+    message += ''
     decipher = ''
-    citext = ''
+    citext = ' '
     for letter in message:
-
-        if (letter != ' '):
+        if (letter != ''):
             i = 0
             citext += letter
         else:
@@ -41,7 +36,6 @@ def decrypt(message):
                 decipher += list(DICT_Morse.keys())[list(DICT_Morse
                 .values()).index(citext)]
                 citext = ''
-
     return decipher
 
 def main():
