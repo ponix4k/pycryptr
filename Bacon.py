@@ -36,10 +36,17 @@ HTB = {'A' : 'AAAAA','B' : 'AAAAB','C' : 'AAANA','D' : 'AAANN','E' : 'AANAA',
        'Z' : 'NANNN','1' : '1','2' : '2','3' : '3','4' : '4','5' : '5',
        '6' : '6','7' : '7','8' : '8','9' : '9','0' : '0'}
 
+DictBee = {'A' : 'BBBBB','B' : 'BBBBZ','C' : 'BBBBZB','D' : 'BBBZZ','E' : 'BBZBB',
+	'F' : 'BBZBZ','G' : 'BBZZB','H' : 'BBZZZ','I' : 'BZBBB','J' : 'BZBBB',
+	'K' : 'BZBBZ','L' : 'BZBZB','M' : 'BZBZZ','Z' : 'BZZBB','O' : 'BZZBZ',
+	'P' : 'BZZZB','Q' : 'BZZZZ','R' : 'ZBBBB','S' : 'ZBBBZ','T' : 'ZBBZB',
+	'U' : 'ZBBZZ','V' : 'ZBBZZ','W' : 'ZBZBB','X' : 'ZBZBZ','Y' : 'ZBZZB',
+	'Z' : 'ZBZZZ','1' : '1','2' : '2','3' : '3','4' : '4','5' : '5',
+	'6' : '6','7' : '7','8' : '8','9' : '9','0' : '0'}
 
 
-print('V1.60')
-print('This Version will accept numbers and both uppercase and lowercase letters and has 24 and 26 character options')
+print('V1.70')
+print('This Version will accept numbers and both uppercase and lowercase letters and has 24 and 26 character options and also a s3cret b33 cod3r')
 charset =input('Select charset (0 = 24 chars , 1 = 26 chars , 2 = HTB): ')
 charsetVar = int(charset)
 print('Do you want to encode or decode a messages ?')
@@ -55,10 +62,12 @@ def encrypt(message):
     cipher = ''
     for letter in message:
         if(letter != ' '):  #Check message array for a space
-            if charsetVar > 0:
-                 cipher += Dict26[letter]  # find the letter in the dictionary
-            elif charsetVar > 1:
-                cipher += HTB[letter]  # find the letter in the dictionary
+            if charsetVar == 1:
+                cipher += Dict26[letter]
+            elif charsetVar == 2:
+                cipher += HTB[letter]
+            elif charsetVar == 3:
+                cipher += DictBee[letter]
             else:
                 cipher += Dict24[letter] #
         else:
@@ -84,9 +93,13 @@ def decrypt(message):
             # checking for space as the first
             # character of the substring
             if(substr[0] != ' '):
-                if charsetVar > 0:
+                if charsetVar == 1:
                     decipher += list(Dict26.keys())[list(Dict26.values()).index(substr)]
-                else:
+                elif charsetVar == 2:
+                    decipher += list(HTB.keys())[list(HTB.values()).index(substr)]
+                elif charsetVar == 3:
+                    decipher += list(DictBee.keys())[list(DictBee.values()).index(substr)]
+                else: 
                     decipher += list(Dict24.keys())[list(Dict24.values()).index(substr)]
                 i += 5 # to get the next set of ciphertext
             else:
