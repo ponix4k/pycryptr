@@ -38,7 +38,7 @@ HTB = {'A' : 'AAAAA','B' : 'AAAAB','C' : 'AAANA','D' : 'AAANN','E' : 'AANAA',
 
 DictBee = {'A' : 'BBBBB','B' : 'BBBBZ','C' : 'BBBBZB','D' : 'BBBZZ','E' : 'BBZBB',
 	'F' : 'BBZBZ','G' : 'BBZZB','H' : 'BBZZZ','I' : 'BZBBB','J' : 'BZBBB',
-	'K' : 'BZBBZ','L' : 'BZBZB','M' : 'BZBZZ','Z' : 'BZZBB','O' : 'BZZBZ',
+        'K' : 'BZBBZ','L' : 'BZBZB','M' : 'BZBZZ','N' : 'BZZBB','O' : 'BZZBZ',
 	'P' : 'BZZZB','Q' : 'BZZZZ','R' : 'ZBBBB','S' : 'ZBBBZ','T' : 'ZBBZB',
 	'U' : 'ZBBZZ','V' : 'ZBBZZ','W' : 'ZBZBB','X' : 'ZBZBZ','Y' : 'ZBZZB',
 	'Z' : 'ZBZZZ','1' : '1','2' : '2','3' : '3','4' : '4','5' : '5',
