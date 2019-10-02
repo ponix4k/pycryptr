@@ -12,9 +12,8 @@ MORSE_CODE_DICT = { 'A':'.-', 'B':'-...',
                     '1':'.----', '2':'..---', '3':'...--', 
                     '4':'....-', '5':'.....', '6':'-....', 
                     '7':'--...', '8':'---..', '9':'----.', 
-                    '0':'-----', ', ':'--..--', '.':'.-.-.-', 
-                    '?':'..--..', '/':'-..-.', '-':'-....-', 
-                    '(':'-.--.', ')':'-.--.-'} 
+                    '0':'-----'}
+                     
 enc = input('Please Make Your Selection (0 = Encode, 1 = Decode): ')
 encVar = int(enc)
 message = input('Please Enter the String you wish to Encode/Decode:  ')
