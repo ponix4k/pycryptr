@@ -3,30 +3,31 @@
 #This is a simple Rotatonal Encoder/Decoder that will shift letters around based on the value given
 
 #CharTypes
-Alpha_Low = ('abcdefghijklmnopqrstuvwxyz') #set up array of lowercase characters
-Alpha_Up  = ('ABCDEFGHIJKLMNOPQRSTUVWXYZ') #set up array of uppercase characters
+alpha_low = ('abcdefghijklmnopqrstuvwxyz') #set up array of lowercase characters
+alpha_up  = ('ABCDEFGHIJKLMNOPQRSTUVWXYZ') #set up array of uppercase characters
 
-#Message
-newMessage = ''
-message = input('Please enter a message to encode/decode: ') #request message from user
-Rot = input('Please Enter Rotation (0 for all) : ') #request rotation amount e.g rot 2 a = c
-RotVal = int(Rot)
+def rotate(char, rot_val):
+	if char in alpha_low:
+		position = alpha_low.find(char)
+		new_position = (position + rot_val) % 26
+		new_char = alpha_low[new_position]
+	elif char in alpha_up:
+		position = alpha_up.find(char)
+		new_position = (position + rot_val) % 26
+		new_char = alpha_up[new_position]
 
-#Lowercase Search
-for Char in message:
- if Char in Alpha_Low:
-  position = Alpha_Low.find(Char)
-  newPosition = (position + RotVal) % 26
-  newChar = Alpha_Low[newPosition]
-  newMessage += newChar
+	return new_char
 
-#Uppercase Search
- elif Char in Alpha_Up:
-  position = Alpha_Up.find(Char)
-  newPosition = (position + RotVal) % 26
-  newChar = Alpha_Up[newPosition]
-  newMessage += newChar
+def encode(message, rot_val):
+	encoded_message = ''
+	for char in message:
+		encoded_message += rotate(char, rot_val)
+	return encoded_message
 
- else:
-  newMessage += Char
-print('Encoded/Decoded message is: ',newMessage)
+def main():
+	message = input('Please enter a message to encode/decode: ')
+	rot = int(input('Please enter rotation factor: '))
+	print("Encoded/Decoded message: {0}".format(encode(message, rot)))
+
+if __name__ == "__main__":
+	main()
